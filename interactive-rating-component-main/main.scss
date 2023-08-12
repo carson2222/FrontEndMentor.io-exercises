@@ -5,8 +5,10 @@ $medium_grey: hsl(216, 12%, 54%);
 $dark_blue: hsl(213, 19%, 18%);
 $very_dark_blue: hsl(216, 12%, 8%);
 
-p {
-  font-size: 15px;
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 *,
 *::after,
@@ -14,7 +16,74 @@ p {
   padding: 0;
   margin: 0;
   box-sizing: inherit;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+html {
+  font-size: 62.5%;
 }
 body {
   font-family: "Overpass", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: $very_dark_blue;
+  @include flex-center();
+}
+.main-box {
+  height: 50vh;
+  width: 30vw;
+  box-sizing: border-box;
+  background-color: $dark_blue;
+  border-radius: 3rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  .star-img {
+    background-color: rgba($medium_grey, 0.2);
+    border-radius: 50%;
+    padding: 1.5rem;
+  }
+  .text-box {
+    h1 {
+      font-weight: 700;
+      color: $white;
+      font-size: 3rem;
+    }
+    p {
+      margin-top: 1.7rem;
+      color: $medium_grey;
+      line-height: 170%;
+    }
+  }
+  .rating-btns-box {
+    @include flex-center();
+    width: 100%;
+    justify-content: space-between;
+    .rating-btn {
+      cursor: pointer;
+      box-sizing: border-box;
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      text-align: center;
+      color: $white;
+      background-color: $medium_grey;
+      opacity: 0.25;
+      border: 0;
+      filter: blur(0.5);
+    }
+  }
+  .submit-btn {
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    width: 100%;
+    height: 4rem;
+    border: 0;
+    color: rgba($orange, 0.7);
+    background-color: $white;
+    border-radius: 5rem;
+  }
 }
