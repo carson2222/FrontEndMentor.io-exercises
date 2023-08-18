@@ -1,0 +1,53 @@
+@import "base";
+@import "variables";
+
+.calculator {
+  width: 50vw;
+  height: 55vh;
+  background-color: var(--color-neutral-white);
+  border-radius: 2rem 2rem 15rem 2rem;
+  display: flex;
+  flex-direction: column;
+
+  padding: 3%;
+  &--form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    flex: 0 0 20%;
+    &__element {
+      display: flex;
+      flex-direction: column;
+      label {
+      }
+
+      input {
+      }
+    }
+  }
+
+  &--separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 10%;
+
+    hr {
+      width: 100%;
+    }
+    img {
+      background-color: var(--color-primary-purple);
+    }
+  }
+
+  &--displayer {
+    &__years {
+    }
+    &__months {
+    }
+    &__days {
+    }
+  }
+}

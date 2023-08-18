@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Age calculator app</title>
 
-  Day
-  DD
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sass/main.scss" />
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Day DD Month MM Year YYYY -- years -- months -- days -->
+    <div class="calculator">
+      <form name="born-date" class="calculator--form">
+        <div class="calculator--form__element">
+          <label for="day">Day</label>
+          <input type="number" id="day" placeholder="DD" />
+        </div>
+        <div class="calculator--form__element">
+          <label for="month">Month</label>
+          <input type="number" id="month" placeholder="MM" />
+        </div>
+        <div class="calculator--form__element">
+          <label for="year">Year</label>
+          <input type="number" id="year" placeholder="YYYY" />
+        </div>
+      </form>
 
-  Month
-  MM
+      <div class="calculator--separator">
+        <hr />
+        <img src="assets/images/icon-arrow.svg" alt="arrow" />
+      </div>
 
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="calculator--displayer">
+        <p class="calculator--displayer__years">--years</p>
+        <p class="calculator--displayer__months">--months</p>
+        <p class="calculator--displayer__days">--days</p>
+      </div>
+    </div>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
 </html>
