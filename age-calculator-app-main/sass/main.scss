@@ -2,27 +2,54 @@
 @import "variables";
 
 .calculator {
-  width: 50vw;
-  height: 55vh;
+  width: 50%;
+  height: 70%;
   background-color: var(--color-neutral-white);
   border-radius: 2rem 2rem 15rem 2rem;
   display: flex;
   flex-direction: column;
 
-  padding: 3%;
+  padding: 2.5%;
+  padding-right: 4%;
   &--form {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    flex: 0 0 25%;
 
-    flex: 0 0 20%;
     &__element {
       display: flex;
       flex-direction: column;
+      flex: 0 1 20%;
+      max-width: 25%;
+
+      height: 100%;
       label {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        color: var(--color-neutral-smokey-grey);
+        letter-spacing: 0.15rem;
+        margin-bottom: 5%;
       }
 
       input {
+        max-width: 80%;
+        height: 50%;
+        box-sizing: border-box;
+
+        padding: 7% 0 7% 10%;
+        border: var(--color-transparent-border-light-grey) solid 2px;
+        border-radius: 8px;
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        &::placeholder {
+          margin-top: 100px;
+          font-weight: 700;
+          font-size: 2.5rem;
+          color: var(--color-neutral-smokey-grey);
+        }
       }
     }
   }
@@ -36,13 +63,31 @@
 
     hr {
       width: 100%;
+      border: 0;
+      border-top: 2px solid var(--color-transparent-border-light-grey);
     }
     img {
+      width: auto;
+      height: 90%;
+      box-sizing: border-box;
+      padding: 2.5%;
+      border-radius: 50%;
       background-color: var(--color-primary-purple);
     }
   }
 
   &--displayer {
+    & p {
+      color: var(--color-neutral-off-black);
+      font-size: 8rem;
+      font-weight: 800;
+      font-style: italic;
+      line-height: 130%;
+      & .text-purple {
+        color: var(--color-primary-purple);
+        letter-spacing: 1.5rem;
+      }
+    }
     &__years {
     }
     &__months {
