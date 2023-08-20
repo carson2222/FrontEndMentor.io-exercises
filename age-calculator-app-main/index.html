@@ -34,11 +34,11 @@
   <body>
     <!-- Day DD Month MM Year YYYY -- years -- months -- days -->
     <div class="calculator">
-      <form name="born-date" class="calculator--form">
+      <form name="born-date" class="calculator--form" method="post">
         <div class="calculator--form__element">
-          <label for="day" class="error-label">Day</label>
-          <input type="number" id="day" placeholder="DD" class="error-input" />
-          <p class="error-display">This field is required</p>
+          <label for="day" class="">Day</label>
+          <input type="number" id="day" placeholder="DD" class="" />
+          <p class="error-display hidden">This field is required</p>
         </div>
         <div class="calculator--form__element">
           <label for="month">Month</label>
@@ -54,7 +54,11 @@
 
       <div class="calculator--separator">
         <hr />
-        <img src="assets/images/icon-arrow.svg" alt="arrow" />
+        <img
+          src="assets/images/icon-arrow.svg"
+          alt="arrow"
+          class="submit_btn"
+        />
       </div>
 
       <div class="calculator--displayer">
@@ -76,4 +80,5 @@
       >. Coded by <a href="#">Your Name Here</a>.
     </div> -->
   </body>
+  <script src="script.js"></script>
 </html>
