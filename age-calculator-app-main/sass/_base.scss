@@ -22,3 +22,12 @@ body {
   min-height: 100vh;
   min-width: 100vw;
 }
+input,
+input:hover,
+input:focus {
+  border: 0;
+  outline: none;
+}
+.hidden {
+  opacity: 0;
+}
