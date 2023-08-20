@@ -45,6 +45,8 @@
         font-size: 2.5rem;
         font-weight: 700;
 
+        caret-color: var(--color-transparent-border-purple);
+        caret-shape: block;
         &::placeholder {
           margin-top: 100px;
           font-weight: 700;
