@@ -26,7 +26,14 @@ submit_btn.addEventListener("click", function () {
   // Return whole function if the inputs are empty or not valid
   if (!valid_date) return;
 
-  const input_date = new Date(+year.value, +month.value - 1, +day.value);
+  const input_date = new Date(
+    +year.value,
+    +month.value - 1,
+    +day.value,
+    cur_date.getHours(),
+    cur_date.getMinutes(),
+    cur_date.getSeconds()
+  );
   if (input_date.getDate() !== +day.value) {
     validChecker(day, "Must be a valid date");
     validChecker(month);
@@ -37,16 +44,10 @@ submit_btn.addEventListener("click", function () {
   if (!valid_date) return;
 
   // Display age
-  console.log(cur_date, input_date);
-  console.log((cur_date.getTime() - input_date.getTime()) / 1000);
-  console.log(new Date(cur_date - input_date));
-
-  console.log(secondsToYMD((cur_date.getTime() - input_date.getTime()) / 1000));
-  // ageDisplayer(
-  //   input_date.getFullYear(),
-  //   input_date.getMonth(),
-  //   input_date.getDate()
-  // );
+  updateDisplayer(
+    ["years", "months", "days"],
+    secondsToYMD((cur_date.getTime() - input_date.getTime()) / 1000)
+  );
 });
 
 /*       <div class="calculator--form__element">
@@ -100,16 +101,25 @@ function secondsToYMD(sec) {
   var day = 60 * 60 * 24;
 
   while (sec >= day * 365) {
-    sec - day * 365;
+    sec = sec - day * 365;
     ++YMD[0];
   }
   while (sec >= day * 31) {
-    sec - day * 31;
+    sec = sec - day * 31;
     ++YMD[1];
   }
   while (sec >= day) {
-    sec - day;
+    sec = sec - day;
     ++YMD[2];
   }
   return YMD;
+}
+function updateDisplayer(arr, data) {
+  for (let i = 0; i < arr.length; i++) {
+    const markup = `<span class="text-purple display-${arr[i]}">${
+      data[i] === 0 ? "--" : data[i]
+    }</span>${data[i] === 1 ? arr[i].slice(0, -1) : arr[i]}`;
+    document.querySelector(`.calculator--displayer__${arr[i]}`).innerHTML =
+      markup;
+  }
 }
