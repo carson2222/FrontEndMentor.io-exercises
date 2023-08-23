@@ -9,11 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/carson2222/FrontEndMentor.io-exercises.git/age-calculator-app-main"
+    "url": "git+https://github.com/carson2222/FrontEndMentor.io-exercises.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carson2222/FrontEndMentor.io-exercises/issues"
+  },
+  "homepage": "https://github.com/carson2222/FrontEndMentor.io-exercises#readme",
   "dependencies": {
+    "@parcel/core": "^2.9.3",
     "parcel": "^2.9.3"
   },
   "devDependencies": {
